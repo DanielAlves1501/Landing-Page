@@ -5,6 +5,7 @@ import { FadeIn, SlideIn } from "./transitions/transitions";
 const heroText = document.getElementById('heroText')
 const heroImage = document.getElementById('heroImage')
 const mainCard = document.getElementById('mainCard')
+const GetStartedBtn = document.getElementById("getStarted")
 
 window.addEventListener('load', ()=>{
     FadeIn(heroText)
@@ -45,6 +46,12 @@ const observer2 = new IntersectionObserver((entries,object)=>{
 })
 
 observer2.observe(mainCard);
+
+// Tracking Get Started Button with FB Pixel
+
+GetStartedBtn.addEventListener('click', ()=>{
+    fbq('track', 'Purchase', {currency: "USD", value: 30.00});
+})
 
 
 
