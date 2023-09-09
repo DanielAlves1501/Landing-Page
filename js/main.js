@@ -49,7 +49,8 @@ observer2.observe(mainCard);
 
 // Tracking Get Started Button with FB Pixel
 
-GetStartedBtn.addEventListener('click', ()=>{
+GetStartedBtn.addEventListener('click', (e)=>{
+    e.preventDefault()
     fbq('track', 'Purchase', {currency: "USD", value: 30.00});
 })
 
